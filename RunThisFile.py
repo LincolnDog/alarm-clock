@@ -1,6 +1,7 @@
 from datetime import datetime
 import webbrowser
 import random
+import time
 
 #Get the Current Time
 now = datetime.now()
@@ -12,7 +13,7 @@ setTime = raw_input("Enter time in HH:MM format\n")
 
 #Open the text file with Youtube URLS, read the lines of the file and select one at random to laucnh.
 #Version 3
-s = open("/Users/jeremykeckler/PycharmProjects/AlarmClockProject/Youtube URLs","r")
+s = open("Youtube URLs","r")
 m = s.readlines()
 L = [] #Create an Empty List
 for i in range(0,len(m)-1): #credit to https://www.codespeedy.com/how-to-get-a-random-line-from-a-text-file-in-python/ for the logic
@@ -23,11 +24,13 @@ for i in range(0,len(m)-1): #credit to https://www.codespeedy.com/how-to-get-a-r
 L.append(m[i+1])
 o = random.choice(L)
 print(o)
-while currentTime > setTime: #Set the condition that if the current time has passes your alarm time to launch a urls
-    webbrowser.open(o)
-    break
-s.close()
 
+while currentTime < setTime: #Set the condition that if the current time has passes your alarm time to launch a urls
+    time.sleep(5) #sleeps for 5 sec so the code isn't constantly running
+    now = datetime.now()
+    currentTime = now.strftime("%H:%M")
+s.close()
+webbrowser.open(o)
 
 #Version 1
 '''while currentTime > setTime:
