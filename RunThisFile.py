@@ -32,6 +32,9 @@ while currentTime < setTime: #Set the condition that if the current time has pas
 s.close()
 webbrowser.open(o)
 
+#This is me practicing how to commit from the IDE Pycharm.
+
+
 #Version 1
 '''while currentTime > setTime:
     webbrowser.open("https://www.youtube.com/watch?v=EEjeTS3_RzM")
