@@ -32,7 +32,7 @@ while currentTime < setTime: #Set the condition that if the current time has pas
 s.close()
 webbrowser.open(o)
 
-#This is me practicing how to commit from the IDE Pycharm.
+#This is me practicing how to commit from the IDE Pycharm. Blah blah blah...
 
 
 #Version 1
